@@ -18,8 +18,8 @@ mathjax: true
 
 #### 本地开发包
 本文是打包一个系统管理项目ivpm：
-1. 需要用到官网例子中的代码git clone https://github.com/electron/electron-quick-start
 
+- 需要用到官网例子中的代码git clone https://github.com/electron/electron-quick-start
 ```
 // main.js
 mainWindow.loadURL(url.format({
@@ -49,24 +49,24 @@ mainWindow.loadURL(url.format({
 ```
 没关系，按后面步骤修改即可
 
-2. 使用vue-cli创建一个新项目：vue init webpack ivpm，安装如下依赖
+- 使用vue-cli创建一个新项目：vue init webpack ivpm，安装如下依赖
 ```
 npm install electron electron-packager -D
 ```
 这时候windows 和 mac 会分别下载相应的electron打包文件，electron-packager：是打包插件
 
-3. 将步骤1.中的main.js拷贝到ivpm项目的build目录下，并更名为electron.js(步骤1.中的package.json文件中的main属性也要修改)
+- 将步骤1.中的main.js拷贝到ivpm项目的build目录下，并更名为electron.js(步骤1.中的package.json文件中的main属性也要修改)
 
-4. electron.js中
+- electron.js中
 
-4.1 添加模块引用
+1. 添加模块引用
 
 ```
 const url = require('url')
 const path = require('path')
 ```
 
-4.2 修改文件路径，指向dist中的index.html
+2. 修改文件路径，指向dist中的index.html
 
 
 ```
@@ -77,9 +77,9 @@ mainWindow.loadURL(url.format({
   slashes: true
 }))
 ```
-5. 更改config/index.js中生产模式下（build）的assetsPublicPth, 原本为 /, 改为 ./
+- 更改config/index.js中生产模式下（build）的assetsPublicPth, 原本为 /, 改为 ./
 
-6. 在新建项目package.json文件中增加一条指令
+- 在新建项目package.json文件中增加一条指令
 ```
 // ivpm/package.json
 "scripts": {
@@ -90,7 +90,7 @@ mainWindow.loadURL(url.format({
     //增加这条,JSON文件不支持注释，引用时请清除
   },
 ```
-7.  执行npm run electron_dev ：会先 执行npm run build 生成dist目录 ，然后启动electron。
+- 执行npm run electron_dev ：会先 执行npm run build 生成dist目录 ，然后启动electron。
 即可看到生成的应用程序，此方法主要是本地开发时候使用
 
 --------------------------------------------------------------------------------
