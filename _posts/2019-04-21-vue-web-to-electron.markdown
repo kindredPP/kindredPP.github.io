@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "将现有用webpack构建的vue项目打包成桌面应用electron"
-date: 2018-12-19 23:22:09
+date: 2019-04-21 11:15:09
 categories: vue electron
 tags: vue web electron
 excerpt: 将现有用webpack构建的vue项目打包成桌面应用electron
@@ -44,24 +44,31 @@ mainWindow.loadURL(url.format({
 
 按上面命令，clone代码到本地，预留main.js和package.json文件备用
 注意点：有可能下载的代码main.js中如下，而不是上面代码：
+```
   mainWindow.loadFile('index.html')
-
+```
 没关系，按后面步骤修改即可
 
 2. 使用vue-cli创建一个新项目：vue init webpack ivpm，安装如下依赖
+```
 npm install electron electron-packager -D
-
+```
 这时候windows 和 mac 会分别下载相应的electron打包文件，electron-packager：是打包插件
 
 3. 将步骤1.中的main.js拷贝到ivpm项目的build目录下，并更名为electron.js(步骤1.中的package.json文件中的main属性也要修改)
 
 4. electron.js中
-添加模块引用
+
+4.1 添加模块引用
+
 ```
 const url = require('url')
 const path = require('path')
 ```
-修改文件路径，指向dist中的index.html
+
+4.2 修改文件路径，指向dist中的index.html
+
+
 ```
 // electron.js
 mainWindow.loadURL(url.format({
