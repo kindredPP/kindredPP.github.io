@@ -2,8 +2,8 @@
 layout: post
 title:  "my first blog"
 date: 2018-12-19 23:22:09
-categories: jekyll
-tags: jekyll
+categories: other
+tags: other
 excerpt: 第一篇创建的博客，说修改更贴切一些
 mathjax: true
 ---
