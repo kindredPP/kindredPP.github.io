@@ -2,8 +2,8 @@
 layout: post
 title:  "将现有用webpack构建的vue项目打包成桌面应用electron"
 date: 2018-12-19 23:22:09
-categories: other,electron
-tags: other,electron
+categories: vue electron
+tags: vue web electron
 excerpt: 将现有用webpack构建的vue项目打包成桌面应用electron
 mathjax: true
 ---
